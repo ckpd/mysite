@@ -1,0 +1,17 @@
+.modal-main{
+    padding: 2rem;
+    font-weight: 200;
+    color: black;
+
+}
+.modal-main h1{
+    font-weight: 400;
+    color: black;
+}
+.modal-main a {
+    background: lightcoral;
+    padding: 10px 20px;
+    border-radius: 100px; 
+    color: aliceblue;
+    clear: both;
+}

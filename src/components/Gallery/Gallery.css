@@ -1,0 +1,23 @@
+.gallery{
+    text-align: center;
+    background: rgba(68, 68, 68, .98);
+    /* background: url('../../assets/imgs/banner.png'); */
+    background-attachment: fixed; 
+    padding: 100px;
+    color: white;
+  }
+.gallery-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.images img{
+    /* padding: 1rem; */
+    width: calc(33% -1rem);
+    height: 10;
+}
+.gallery>p{
+    margin-bottom: 3rem;
+}

@@ -1,0 +1,42 @@
+.banner{
+    background: rgba(46, 45, 45, .97);
+    /* background: url(../../assets/imgs/banner.png); */
+    background-size: contain;
+    background-position: right;
+    background-repeat: repeat;
+    color: var(--main-font-color);
+    text-transform: capitalize;
+    padding: 50px;
+  }
+  
+  .callToAction{
+    display: flex;
+    max-width: 350px;
+    flex-direction: column; 
+    text-align: center;
+   
+  }
+  .callToAction h1{
+    margin-bottom: 1em;
+  }  
+  .callToAction p{
+    margin-bottom: 2em;
+  }  
+  .callToAction img{
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 640px){
+    .callToAction{
+      padding: 80px 0 50px 50px ;
+      text-align: left;
+    }
+
+    .callToAction img{
+      margin: 0;
+
+    }
+
+  }

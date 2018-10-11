@@ -1,0 +1,17 @@
+.Order {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+
+}
+
+.Order p{
+    background: hsl(0, 0%, 83%);
+    width: 100%;
+
+}
+
+.Order button{
+
+    justify-content: flex-end;
+}

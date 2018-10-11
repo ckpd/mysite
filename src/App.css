@@ -1,0 +1,98 @@
+
+:root {
+  --main-bodybg-color: #ffffff; 
+  --main-Highlight-color: #069b82; 
+  --main-primarydark-color: rgb(8, 8, 8); 
+  --main-primary-color: rgba(243, 244, 243, 0.071); 
+  --main-font-color: #ffffff; 
+}
+
+.container {
+  padding: 20px;
+  font-family: "Roboto";
+  min-height:100%;
+  position:relative;
+
+}
+h1{
+  font-weight: 400;  
+  font-size: 2em;
+  letter-spacing: 2px;
+}
+p{
+  font-size: 1.2em;
+  font-weight: 100;
+}
+
+a, li, ul{
+  text-decoration: none;
+}
+a:active, a:visited{
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.nav-links {
+  height: 50px;
+  color: rgb(14, 15, 15);
+  display: inline-block;
+  width: 90%;
+  text-align: right;
+  text-decoration: none;
+}
+.nav-links li{
+  list-style: none;
+}
+.nav-links img{
+  width: 20px;
+}
+
+.nav-links [data-badge]:after {
+  content:attr(data-badge);
+ position:absolute;
+ top:20px;
+ right:20px;
+ font-size: .8em;
+ padding: 2px;
+ background:var(--main-Highlight-color);
+ color:white;
+ width:18px;height:18px;
+ text-align:center;
+ line-height:18px;
+ border-radius:50%;
+ box-shadow:0 0 1px #333;
+}
+
+span{
+ color:var(--main-Highlight-color);
+}
+
+.App-title {
+font-size: 1.2em;
+}
+.logo{  
+  display: inline-block;
+  width: 10%;
+}
+
+
+hr{
+  margin: 50px auto;
+  text-align: center;
+  width: 50%;
+  height: 2px;
+  background:var(--main-Highlight-color);
+  border: none;
+
+}
+
+.images{
+  overflow: hidden;
+}
+.images img{
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: center;
+}
+

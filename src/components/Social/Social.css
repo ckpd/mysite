@@ -1,0 +1,12 @@
+
+.social{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .social img {
+      padding: 10px;
+  }

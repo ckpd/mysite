@@ -1,0 +1,16 @@
+
+.footer {
+    font-family: "Open+Sans";
+    padding: 80px 10px 0 0;
+    color: var(--main-font-color);
+    background:  var(--main-Highlight-color);
+    text-transform: capitalize;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .footer__item{
+    border-top: dotted 1px var(--main-font-color);
+    padding: 10px;
+  }
