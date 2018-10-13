@@ -22,7 +22,7 @@ function handleCartAdd(state, payload){
     return {
         items: [ 
             ...state.items, 
-            payload.objectId
+            payload
 
         ]
     }

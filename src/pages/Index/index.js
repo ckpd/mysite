@@ -7,7 +7,7 @@ import Footer from '../../components/Footer/Footer';
 import down from '../../assets/imgs/down.png';
 import { addToCart} from '../../redux/actions/actions';
 import { connect } from "react-redux";
-import cData from '../../components/Data/Data.json'
+import cachedData from '../../components/Data/Data.json'
 
 class App extends Component {
   constructor(props){
@@ -16,6 +16,7 @@ class App extends Component {
   }
   
   handleAddToCart(data){
+    console.log(data)
     this.props.addToCart(addToCart(data))
   }
 
@@ -32,7 +33,7 @@ class App extends Component {
             alt={down}/>
       <hr/>
       <DataList 
-          data={cData.cars}
+          data={cachedData.items}
           handleAddToCart={this.handleAddToCart}
           />
           <hr/>

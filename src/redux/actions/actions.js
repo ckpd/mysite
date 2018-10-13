@@ -1,10 +1,8 @@
 import { ADDTOCART } from './action-types';
 
-export function addToCart( objectId) {
+export function addToCart( items) {
     return {
         type: ADDTOCART,
-        items: {
-            objectId : objectId
-        }
+        items
     }
 }
