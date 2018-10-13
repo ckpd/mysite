@@ -1,7 +1,7 @@
 import {ADDTOCART, REMOVEFROMCART} from '../actions/action-types';
 
 const initialState = {
-    cars: []
+    items: []
   };
 
 
@@ -20,8 +20,8 @@ export default function cart(state = initialState, action){
 
 function handleCartAdd(state, payload){
     return {
-        cars: [ 
-            ...state.cars, 
+        items: [ 
+            ...state.items, 
             payload.objectId
 
         ]

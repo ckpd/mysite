@@ -1,28 +1,10 @@
-import { ADDTOCART,SHOW_ITEM, TOTAL } from './action-types';
-
-
-
-export const showItem = (item) => {
-    return {
-        type: SHOW_ITEM, 
-        item
-    }
-}
-
-export const VisibilityFilters = {
-    SHOW_ALL: 'SHOW_ALL'
-}
+import { ADDTOCART } from './action-types';
 
 export function addToCart( objectId) {
     return {
         type: ADDTOCART,
-        item: {
+        items: {
             objectId : objectId
         }
     }
 }
-
-export const incrementQuantityInCart = (objectId) => ({
-    type: TOTAL,
-    objectId,
-  })

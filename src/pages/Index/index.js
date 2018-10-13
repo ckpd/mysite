@@ -47,7 +47,6 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  items: state.items,
   cart: state.cart
 });
 
