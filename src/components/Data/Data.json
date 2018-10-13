@@ -1,0 +1,19 @@
+{
+    "cars":[
+        {
+            "title": "suv",
+            "imageName" : "jeep",
+            "objectId": 0
+        },
+        {
+            "title": "Car",
+            "imageName" : "car",
+            "objectId": 1
+        },
+        {
+            "title": "Scooter",
+            "imageName" : "scooter",
+            "objectId": 2
+        }
+    ]
+}

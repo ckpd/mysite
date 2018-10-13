@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import bag from '../../assets/imgs/bag.png'
+import './Cart.css';
 
 export default class Cart extends Component{
     render(){

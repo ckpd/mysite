@@ -39,7 +39,7 @@ export default class DataItem extends Component{
                 <hr/>
 
 
-                <a href="#" onClick={this.props.handleClick.bind(this, this.props.data)}>Continue</a>
+                <a href="/" onClick={this.props.handleClick.bind(this, this.props.data)}>Continue</a>
                 <hr/>
             </Modal>
             </div>    

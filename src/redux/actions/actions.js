@@ -1,4 +1,4 @@
-import { ADDTOCART,SHOW_ITEM, ISINCART, TOTAL } from './action-types';
+import { ADDTOCART,SHOW_ITEM, TOTAL } from './action-types';
 
 
 

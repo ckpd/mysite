@@ -22,13 +22,14 @@ class DataList extends Component{
         );
     
     }
+
     render(){
         return (
             <section className="options">
             <h1>Choose A Vehicle Type</h1>
             <p>Something about this as subheader</p>
             <div className="grid-items__array">
-                {this.props.data.map(this.renderDataItems)}
+            {this.props.data.map(this.renderDataItems)}
             </div>
             </section>
         )

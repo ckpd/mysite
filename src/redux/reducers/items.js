@@ -1,8 +1,8 @@
-import data from '../../components/Data/Data';
+import data from '../../components/Data/Data.json';
 import {SHOW_ITEM} from '../actions/action-types';
 
 const initialState = {
-    data: data,
+    cars: data.cars,
   };
 
 const rootReducer = (state = initialState, action) =>  {
@@ -10,7 +10,7 @@ const rootReducer = (state = initialState, action) =>  {
         case SHOW_ITEM:
             return{
                 ...state,
-                data: [
+                cars: [
                     ...state.data,
                     action.items
                 ]
