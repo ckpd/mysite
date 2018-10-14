@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 import bag from '../../assets/imgs/bag.png'
+import { fetchCart} from '../../redux/actions/actions';
+import { connect } from "react-redux";
 import './Cart.css';
 
-export default class Cart extends Component{
+class Cart extends Component{
+    constructor(props){
+        super(props);
+    }
+
+    componentDidMount(){
+        this.props.fetchCart();
+    }
+
     render(){
         return(
             <nav>
@@ -11,10 +21,23 @@ export default class Cart extends Component{
                 </header>
                 <header className="nav-links">
                 <ul>
-                <li><a href="/checkout" data-badge={this.props.cartTotal}><img src={bag} alt="checkout-bag"/></a></li>
+                <li><a href="/checkout" data-badge={(this.props.items).length}><img src={bag} alt="checkout-bag"/></a></li>
             </ul>   
             </header>
         </nav>
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+      items: state.cart
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchCart: () => dispatch(fetchCart()),
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

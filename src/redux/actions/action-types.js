@@ -1,8 +1,16 @@
-export const ADDTOCART = 'ADDTOCART'
+export const ADD_TO_CART_SUCCESS = 'ADD_TO_CART_SUCCESS'
 export const REMOVEFROMCART = 'REMOVEFROMCART'
 export const SHOW_ITEM = 'SHOW_ITEM'
 export const SHOW_ALL = 'SHOW_ALL'
 export const ISINCART = 'ISINCART'
-export const TOTAL = 'TOTAL'
+export const FETCHCART = 'FETCHCART'
+export const FETCH_CART_SUCCESS = 'FETCH_CART_SUCCESS'
+export const ITEMS_HAVE_ERROR = 'ITEMS_HAVE_ERROR'
+export const ITEMS_ARE_LOADING = 'ITEMS_ARE_LOADING'
+export const ITEMS_FETCH_DATA_SUCCESS = 'ITEMS_FETCH_DATA_SUCCESS'
+
+
+
+
 
 

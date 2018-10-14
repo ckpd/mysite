@@ -13,7 +13,7 @@ class DataList extends Component{
     }
     renderDataItems(data){
         return(
-            <div key={data.objectId}>
+            <div key={data.id}>
             <DataItem
                 data={data}
                 handleClick={this.handleClick}>
@@ -29,7 +29,7 @@ class DataList extends Component{
             <h1>Choose A Vehicle Type</h1>
             <p>Something about this as subheader</p>
             <div className="grid-items__array">
-            {this.props.data.map(this.renderDataItems)}
+            {this.props.data.slice(0,3).map(this.renderDataItems)}
             </div>
             </section>
         )

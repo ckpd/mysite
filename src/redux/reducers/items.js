@@ -1,24 +1,34 @@
 import data from '../../components/Data/Data.json';
-import {SHOW_ITEM} from '../actions/action-types';
+import {
+    ITEMS_HAVE_ERROR,
+    ITEMS_ARE_LOADING,
+    ITEMS_FETCH_DATA_SUCCESS
+} from '../actions/action-types';
 
-const initialState = {
-    cars: data.cars,
-  };
-
-const rootReducer = (state = initialState, action) =>  {
-    switch(action.type){
-        case SHOW_ITEM:
-            return{
-                ...state,
-                cars: [
-                    ...state.data,
-                    action.items
-                ]
-            };
-            default:
-                return state; 
+export function itemsHaveError(state = false, action) {
+    switch (action.type) {
+        case 'ITEMS_HAVE_ERROR':
+            return action.hasError;
+        default:
+            return state;
+    }
+}
+export function itemsAreLoading(state = false, action) {
+    switch (action.type) {
+        case 'ITEMS_ARE_LOADING':
+            return action.isLoading;
+        default:
+            return state;
     }
 }
 
-export default rootReducer;
+export function items(state = [], action) {
+    switch (action.type) {
+        case 'ITEMS_FETCH_DATA_SUCCESS':
+            return action.items;
+        default:
+            return state;
+    }
+}
+
 

@@ -24,7 +24,9 @@ export default class DataItem extends Component{
              
         <div className="items"> 
             <h1>{this.props.data.title}</h1>
-            <img src={require(`../../assets/imgs/${this.props.data.imageName}.png`)} alt={this.props.data.title}/>
+            {/* <img src={require(`../../assets/imgs/${this.props.data.imageName}.png`)} alt={this.props.data.title}/> */}
+            <img src={this.props.data.avatar} alt={this.props.data.title}/>
+            
             <button
             onClick={()=>this.onOpenModal(title)} 
             >
@@ -39,7 +41,7 @@ export default class DataItem extends Component{
                 <hr/>
 
 
-                <a href="#" onClick={this.props.handleClick.bind(this, this.props.data)}>Continue Reservation</a>
+                <a href="/checkout" onClick={this.props.handleClick.bind(this, this.props.data)}>Continue Reservation</a>
                 <hr/>
             </Modal>
             </div>    

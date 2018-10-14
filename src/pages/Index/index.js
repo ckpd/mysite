@@ -5,7 +5,7 @@ import DataList from '../../components/Data/DataList';
 import Social from '../../components/Social/Social'
 import Footer from '../../components/Footer/Footer';
 import down from '../../assets/imgs/down.png';
-import { addToCart} from '../../redux/actions/actions';
+import { addToCart, itemsFetchData} from '../../redux/actions/actions';
 import { connect } from "react-redux";
 import cachedData from '../../components/Data/Data.json'
 
@@ -17,10 +17,22 @@ class App extends Component {
   
   handleAddToCart(data){
     console.log(data)
-    this.props.addToCart(addToCart(data))
+    this.props.addToCart(addToCart('https://5bc254b6ce72500013c2a5c9.mockapi.io/v1/store',data))
   }
 
+  componentDidMount() {
+    this.props.fetchData('https://5bc254b6ce72500013c2a5c9.mockapi.io/v1/store');
+}
+
+
   render() {
+    if (this.props.hasError) {
+      return <p>Sorry! There was an error loading the items</p>;
+    }
+
+    if (this.props.isLoading) {
+        return <p>Loading ...</p>;
+    }
     var header__h1 = 'Make Awesome Travel Easy & Affordable.';
     var subTitle__p='Rent a car or suv from us today';
     return (
@@ -33,7 +45,7 @@ class App extends Component {
             alt={down}/>
       <hr/>
       <DataList 
-          data={cachedData.items}
+          data={this.props.items}
           handleAddToCart={this.handleAddToCart}
           />
           <hr/>
@@ -48,12 +60,16 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  cart: state.cart
+  items: state.items,
+  hasError: state.itemsHaveError,
+  isLoading: state.itemsAreLoading
+
 });
 
 const mapDispatchToProps = (dispatch) => 
 ({
-  addToCart: objectId => dispatch(addToCart(objectId))
+  addToCart: item => dispatch(addToCart(item)),
+  fetchData: (url) => dispatch(itemsFetchData(url))
 });
 
 
