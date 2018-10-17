@@ -1,6 +1,7 @@
 import { ADD_TO_CART_SUCCESS, FETCH_CART_SUCCESS } from './action-types'
 import Axios from 'axios';
 const url = 'https://5bc254b6ce72500013c2a5c9.mockapi.io/v1/cart';
+const apUrl = 'https://192.168.1.12/tasks';
 
 
 export function addToCartSuccess(item) {
@@ -75,7 +76,7 @@ export function itemsFetchDataSuccess(items) {
     };
 }
 
-export function itemsFetchData(url) {
+export function itemsFetchData() {
     return (dispatch) => {
         dispatch(itemsAreLoading(true));
         Axios.get(url)

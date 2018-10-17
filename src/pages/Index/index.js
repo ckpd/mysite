@@ -17,11 +17,11 @@ class App extends Component {
   
   handleAddToCart(data){
     console.log(data)
-    this.props.addToCart(addToCart('https://5bc254b6ce72500013c2a5c9.mockapi.io/v1/store',data))
+    this.props.addToCart(addToCart('',data))
   }
 
   componentDidMount() {
-    this.props.fetchData('https://5bc254b6ce72500013c2a5c9.mockapi.io/v1/store');
+    this.props.fetchData();
 }
 
 
@@ -69,7 +69,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => 
 ({
   addToCart: item => dispatch(addToCart(item)),
-  fetchData: (url) => dispatch(itemsFetchData(url))
+  fetchData: (url) => dispatch(itemsFetchData())
 });
 
 
