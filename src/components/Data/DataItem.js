@@ -10,7 +10,7 @@ export default class DataItem extends Component{
         }
         this.onOpenModal = this.onOpenModal.bind(this);  
       }
-    onOpenModal =(title) => {
+    onOpenModal =() => {
         this.setState({ open: true });
     };
     
@@ -23,15 +23,9 @@ export default class DataItem extends Component{
         return(       
              
         <div className="items"> 
-            <h1>{this.props.data.title}</h1>
-            {/* <img src={require(`../../assets/imgs/${this.props.data.imageName}.png`)} alt={this.props.data.title}/> */}
-            <img src={this.props.data.avatar} alt={this.props.data.title}/>
-            
-            <button
-            onClick={()=>this.onOpenModal(title)} 
-            >
-            Book Now
-            </button>
+            <h1>{this.props.data.avatar}</h1>
+            <img src={require(`../../assets/imgs/${this.props.data.avatar}.png`)} alt={this.props.data.avatar}/>`
+            <button onClick={()=>this.onOpenModal()} >  Book Now </button>
             <Modal open={this.state.open} handleClose={this.onCloseModal}>
                 <h1>You selected {this.props.data.title}</h1>
                 <p>Hit continue to complete reservation </p>
@@ -39,9 +33,7 @@ export default class DataItem extends Component{
                 <p>pickup date</p>
                 <p>dropoff date</p>
                 <hr/>
-
-
-                <a href="/checkout" onClick={this.props.handleClick.bind(this, this.props.data)}>Continue Reservation</a>
+                <a href="#" onClick={this.props.handleClick.bind(this, this.props.data)}>Continue Reservation</a>
                 <hr/>
             </Modal>
             </div>    

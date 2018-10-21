@@ -13,7 +13,7 @@ class DataList extends Component{
     }
     renderDataItems(data){
         return(
-            <div key={data.id}>
+            <div key={data.vehicle_id}>
             <DataItem
                 data={data}
                 handleClick={this.handleClick}>

@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
-import { fetchCart} from '../../redux/actions/actions';
+//import { fetchCart} from '../../redux/actions/actions';
 import { connect } from "react-redux";
-import Form from '../../components/Form/Form'
 import Footer from '../../components/Footer/Footer'
 
 
 class CheckoutApp extends Component {
-  constructor(props){
-    super(props);
-  }
-
-
   componentDidMount(){
-    this.props.fetchCart();
+//    this.props.fetchCart();
   }
 
   render() {
@@ -51,7 +45,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      fetchCart: () => dispatch(fetchCart()),
+//      fetchCart: () => dispatch(fetchCart()),
   };
 };
 export default connect(mapStateToProps,mapDispatchToProps)(CheckoutApp);

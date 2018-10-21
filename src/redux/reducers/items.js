@@ -1,9 +1,3 @@
-import data from '../../components/Data/Data.json';
-import {
-    ITEMS_HAVE_ERROR,
-    ITEMS_ARE_LOADING,
-    ITEMS_FETCH_DATA_SUCCESS
-} from '../actions/action-types';
 
 export function itemsHaveError(state = false, action) {
     switch (action.type) {

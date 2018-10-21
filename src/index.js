@@ -3,7 +3,6 @@ import App from './App'
 import {render} from 'react-dom';
 import { Provider } from 'react-redux'
 import configureStore from './redux/store'
-import * as itemActions from './redux/actions/actions';
 
 import './App.css';
 

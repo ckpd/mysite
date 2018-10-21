@@ -5,27 +5,37 @@ import DataList from '../../components/Data/DataList';
 import Social from '../../components/Social/Social'
 import Footer from '../../components/Footer/Footer';
 import down from '../../assets/imgs/down.png';
-import { addToCart, itemsFetchData} from '../../redux/actions/actions';
+import {addToCart, itemsFetchData} from '../../redux/actions/actions';
 import { connect } from "react-redux";
-import cachedData from '../../components/Data/Data.json'
+import uuid from 'uuid';
+
+// import cachedData from '../../components/Data/Data.json'
+//
+const x ={
+        customer_session: uuid.v4()
+};
+
 
 class App extends Component {
   constructor(props){
   super(props);
     this.handleAddToCart = this.handleAddToCart.bind(this);
   }
-  
-  handleAddToCart(data){
-    console.log(data)
-    this.props.addToCart(addToCart('',data))
-  }
+    
+        handleAddToCart(data){
+        this.props.addToCart(data)
+      }
 
-  componentDidMount() {
-    this.props.fetchData();
-}
+      componentDidMount() {
+        this.props.fetchData();
+          
+          
+          
+    }
 
 
   render() {
+
     if (this.props.hasError) {
       return <p>Sorry! There was an error loading the items</p>;
     }
@@ -35,6 +45,9 @@ class App extends Component {
     }
     var header__h1 = 'Make Awesome Travel Easy & Affordable.';
     var subTitle__p='Rent a car or suv from us today';
+
+    var fab = this.props.items;
+
     return (
       <div>
       <div className="container">
@@ -45,7 +58,7 @@ class App extends Component {
             alt={down}/>
       <hr/>
       <DataList 
-          data={this.props.items}
+          data={fab}
           handleAddToCart={this.handleAddToCart}
           />
           <hr/>
@@ -61,6 +74,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
   items: state.items,
+//    users:state.users,
   hasError: state.itemsHaveError,
   isLoading: state.itemsAreLoading
 
@@ -68,8 +82,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => 
 ({
-  addToCart: item => dispatch(addToCart(item)),
-  fetchData: (url) => dispatch(itemsFetchData())
+  addToCart: (data) => dispatch(addToCart(data)),
+  fetchData: () => dispatch(itemsFetchData())
 });
 
 
